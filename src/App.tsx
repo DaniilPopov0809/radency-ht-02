@@ -1,8 +1,12 @@
 import React from 'react';
+import NotesTable from './components/NotesTable/NotesTable';
 
 function App() {
   return (
-    <h1>Hello World!</h1>
+    <>
+   <NotesTable stats={false}/>
+   <NotesTable stats={true}/>
+   </>
   );
 }
 
