@@ -80,12 +80,12 @@ const NotesForm = ({
       <Form.Group className="mb-3">
         <Form.Label>Category</Form.Label>
         <Form.Select
-          aria-label="Default select example"
           name="category"
           value={category}
+          
           onChange={(e) => setCategory(e.target.value)}
         >
-          <option>Select category</option>
+          <option value="">Select category</option>
           {categories.map((category) => (
             <option value={category} key={category}>
               {category}
@@ -104,7 +104,7 @@ const NotesForm = ({
           style={{ height: "100px" }}
         />
       </Form.Group>
-      <Button variant="primary" type="submit">
+      <Button variant="primary" type="submit" disabled={!title || !category}>
         {modalType === "add" ? "Add note" : "Save note"}
       </Button>
     </Form>
