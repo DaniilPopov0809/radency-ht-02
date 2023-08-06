@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-// import { RootState, AppThunk } from '../../redux/store';
 import { NoteItem, NotesState, UpdateNoteItem } from "../../types/types";
 
 const initialState: NotesState = {
@@ -15,9 +14,10 @@ const initialState: NotesState = {
     {
       id: "vperTKBsSa_qi4pesmGLD",
       created: "May 07, 2023",
-      title: "Books",
+      title: "Doctor",
       category: "Task",
-      content: "Learn startup",
+      content:
+        "I’m gonna have a dentist appointment on the 15/5/2023, I moved it from 20/5/2023",
       archive: true,
     },
     {
@@ -86,22 +86,8 @@ export const notesSlice = createSlice({
       );
       state.notes[index] = { ...state.notes[index], ...newNotes };
     },
-
   },
 });
 
 export const { addNote, editNote, removeNote } = notesSlice.actions;
 export default notesSlice.reducer;
-
-// We can also write thunks by hand, which may contain both sync and async logic.
-// Here's an example of conditionally dispatching actions based on current state.
-// export const incrementIfOdd =
-//   (amount: number): AppThunk =>
-//   (dispatch, getState) => {
-//     const currentValue = selectCount(getState());
-//     if (currentValue % 2 === 1) {
-//       dispatch(incrementByAmount(amount));
-//     }
-//   };
-
-// export default counterSlice.reducer;

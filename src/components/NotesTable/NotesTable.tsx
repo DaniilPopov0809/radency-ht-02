@@ -41,10 +41,16 @@ const NotesTable = ({ stats }: { stats: boolean }) => {
     archive: false,
   };
 
+  const archivedNotes = notes.filter((note) => note.archive);
+  const activeNotes = notes.filter((note) => !note.archive);
+
   useEffect(() => {}, [notes]);
 
   return (
     <>
+      {!stats && (
+        <h1 className="text-center">{archived ? "Archive" : "ToDo List"}</h1>
+      )}
       <Table striped bordered hover>
         <thead>
           <tr className="table-primary">
@@ -92,6 +98,12 @@ const NotesTable = ({ stats }: { stats: boolean }) => {
                 ))}
         </tbody>
       </Table>
+      {activeNotes.length === 0 && !archived && !stats && (
+        <p className="text-center">No notes available.</p>
+      )}
+      {archivedNotes.length === 0 && archived && !stats && (
+        <p className="text-center">No notes available.</p>
+      )}
       <div className="mb-3">
         {!stats && (
           <Button

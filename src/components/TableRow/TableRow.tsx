@@ -5,6 +5,7 @@ import { useAppDispatch } from "../../hooks/hooks";
 import { editNote, removeNote } from "../../redux/notes/notesSlice";
 import { truncateString } from "../../helpers/truncateString";
 import { countCategory } from "../../helpers/countCategory";
+import { getDate } from "../../helpers/getDate";
 
 const TableRow = ({
   note,
@@ -45,9 +46,9 @@ const TableRow = ({
           <td>{note.created}</td>
           <td>{note.category}</td>
           <td>{truncateString(note.content, 25)}</td>
-          <td></td>
+          <td>{getDate(note.content).join(', ')}</td>
           <td>
-            <div>
+            <div className="d-flex justify-content-center">
               <button
                 type="button"
                 className="btn btn-primary me-2"
