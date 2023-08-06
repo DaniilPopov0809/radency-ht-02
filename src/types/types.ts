@@ -20,10 +20,8 @@ export interface NotesState {
     archive: boolean; 
   }
 
-  // export interface StatsItem {
-  //   category: string,
-  //   active: number,
-  //   archived: number,
-  // }
-
   export type UpdateNoteItem = Partial<NoteItem>;
+
+  export type HandleFunction = (type?:ModalType, note?:NoteItem) => void;
+
+  export type ModalType = 'add' | 'edit';
