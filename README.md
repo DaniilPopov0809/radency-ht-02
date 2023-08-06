@@ -20,8 +20,8 @@ The "To-Do" web app is a convenient tool for organizing tasks, ideas, and variou
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![GIT](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white)
-![React-bootstrap](https://img.shields.io/badge/React-bootstrap-35FFF8?style=for-the-badge)
-![Create-react-app](https://img.shields.io/badge/Webpack-090000?style=for-the-badge)
+![React-bootstrap](https://img.shields.io/badge/Reactbootstrap-35FFF8?style=for-the-badge)
+![Create-react-app](https://img.shields.io/badge/CreateReactApp-090000?style=for-the-badge)
 
 ## Link to web app:
 [Link to web app](https://radency-ht-02-git-main-daniilpopov0809.vercel.app/)

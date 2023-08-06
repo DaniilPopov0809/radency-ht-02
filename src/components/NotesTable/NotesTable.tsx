@@ -109,6 +109,7 @@ const NotesTable = ({ stats }: { stats: boolean }) => {
           <Button
             className="btn primary-btn me-2"
             onClick={() => handleShow("add")}
+            disabled={archived === true}
           >
             Create Note
           </Button>
