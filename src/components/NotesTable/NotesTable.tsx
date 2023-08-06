@@ -41,8 +41,8 @@ const NotesTable = ({ stats }: { stats: boolean }) => {
     archive: false,
   };
 
-  const archivedNotes = notes.filter((note) => note.archive);
-  const activeNotes = notes.filter((note) => !note.archive);
+  const archivedNotes: NoteItem[] = notes.filter((note) => note.archive);
+  const activeNotes: NoteItem[] = notes.filter((note) => !note.archive);
 
   useEffect(() => {}, [notes]);
 
