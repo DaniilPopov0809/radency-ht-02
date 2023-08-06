@@ -45,6 +45,7 @@ const NotesTable = ({ stats }: { stats: boolean }) => {
 
   return (
     <>
+     {!stats && <h1 className="text-center">ToDo List</h1>}
       <Table striped bordered hover>
         <thead>
           <tr className="table-primary">
