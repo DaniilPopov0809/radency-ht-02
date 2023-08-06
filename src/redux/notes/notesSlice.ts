@@ -90,7 +90,7 @@ export const notesSlice = createSlice({
   },
 });
 
-export const { addNote } = notesSlice.actions;
+export const { addNote, editNote, removeNote } = notesSlice.actions;
 export default notesSlice.reducer;
 
 // We can also write thunks by hand, which may contain both sync and async logic.

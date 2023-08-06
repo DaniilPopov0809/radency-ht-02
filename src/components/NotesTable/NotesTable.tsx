@@ -10,12 +10,19 @@ const NotesTable = ({stats}:{stats:boolean}) => {
 
   const [show, setShow] = useState(false);
   const [modalType, setModalType] = useState<ModalType>("add");
+  const [selectedNote, setSelectedNote] = useState<NoteItem | null>(null);
 
-  const handleClose: HandleFunction = () => setShow(false);
-  const handleShow: HandleFunction = (type?: ModalType) => {
+  const handleClose: HandleFunction = () => {
+    setShow(false);
+    setSelectedNote(null);
+  }
+  const handleShow: HandleFunction = (type, note) => {
     setShow(true);
     if (type) {
       setModalType(type);
+    }
+    if (note) {
+      setSelectedNote(note);
     }
   };
 
@@ -67,7 +74,7 @@ const NotesTable = ({stats}:{stats:boolean}) => {
     </tbody>
   </Table>
   {!stats && <Button className='mb-3' onClick={() => handleShow('add')}>Create Note</Button>}
-  <TableModal show={show} handleClose={handleClose} modalType={modalType}/>
+  <TableModal show={show} handleClose={handleClose} modalType={modalType} initialNote={selectedNote}/>
   </>
   );
 }

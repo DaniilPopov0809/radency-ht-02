@@ -34,7 +34,7 @@ const TableRow = ({
           <td></td>
           <td>
             <div>
-              <button type="button" className="btn btn-primary me-2" name="edit" onClick={()=> handleShow('edit')}>
+              <button type="button" className="btn btn-primary me-2" name="edit" onClick={()=> handleShow('edit', note)}>
                 <BiEditAlt size={24} />
               </button>
               <button type="button" className="btn btn-primary me-2" name="archive">

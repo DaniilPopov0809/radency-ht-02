@@ -22,6 +22,6 @@ export interface NotesState {
 
   export type UpdateNoteItem = Partial<NoteItem>;
 
-  export type HandleFunction = (type?:ModalType) => void;
+  export type HandleFunction = (type?:ModalType, note?:NoteItem) => void;
 
   export type ModalType = 'add' | 'edit';

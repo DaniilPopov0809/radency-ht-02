@@ -1,8 +1,8 @@
 import { Modal} from 'react-bootstrap';
-import { HandleFunction, ModalType } from '../../types/types';
+import { HandleFunction, ModalType, NoteItem } from '../../types/types';
 import NotesForm from '../NotesForm/NotesForm';
 
-const TableModal = ({show, handleClose, modalType}:{show:boolean, handleClose:HandleFunction, modalType:ModalType}) => {
+const TableModal = ({show, handleClose, modalType, initialNote}:{show:boolean, handleClose:HandleFunction, modalType:ModalType, initialNote:NoteItem|null}) => {
 
   return (
     <>
@@ -11,7 +11,7 @@ const TableModal = ({show, handleClose, modalType}:{show:boolean, handleClose:Ha
           <Modal.Title>{modalType === "add"? 'Add note' : "Edit note"}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-        <NotesForm modalType={modalType}/>
+        <NotesForm modalType={modalType} initialNote={initialNote} handleClose={handleClose}/>
         </Modal.Body>
       </Modal>
     </>
