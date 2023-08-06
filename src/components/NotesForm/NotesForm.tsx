@@ -59,7 +59,7 @@ const NotesForm = ({
       dispatch(addNote(data));
     }
     if (modalType === "edit" && initialNote) {
-      const data: NoteItem = {...initialNote, title, category, content};
+      const data: NoteItem = { ...initialNote, title, category, content };
       dispatch(editNote(data));
     }
     handleClose();
@@ -82,7 +82,6 @@ const NotesForm = ({
         <Form.Select
           name="category"
           value={category}
-          
           onChange={(e) => setCategory(e.target.value)}
         >
           <option value="">Select category</option>

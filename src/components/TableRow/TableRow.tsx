@@ -20,7 +20,6 @@ const TableRow = ({
   category: string;
   handleShow: HandleFunction;
 }) => {
-
   const dispatch = useAppDispatch();
 
   const handleClickArchived = () => {
@@ -30,7 +29,7 @@ const TableRow = ({
 
   const handleClickRemove = () => {
     dispatch(removeNote(note));
-  }
+  };
 
   return (
     <tr className="table-light">
@@ -46,7 +45,7 @@ const TableRow = ({
           <td>{note.created}</td>
           <td>{note.category}</td>
           <td>{truncateString(note.content, 25)}</td>
-          <td>{getDate(note.content).join(', ')}</td>
+          <td>{getDate(note.content).join(", ")}</td>
           <td>
             <div className="d-flex justify-content-center">
               <button
@@ -65,7 +64,12 @@ const TableRow = ({
               >
                 <BiArchiveIn size={24} />
               </button>
-              <button type="button" className="btn btn-primary" name="remove" onClick={handleClickRemove}>
+              <button
+                type="button"
+                className="btn btn-primary"
+                name="remove"
+                onClick={handleClickRemove}
+              >
                 <AiOutlineDelete size={24} />
               </button>
             </div>

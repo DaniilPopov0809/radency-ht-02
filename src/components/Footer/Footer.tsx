@@ -10,7 +10,10 @@ const Footer = () => {
           All rights reserved © {new Date().getFullYear()} by Daniil Popov
         </p>
         <div className="mb-1">
-          <a href="mailto:x6uhrox@gmail.com" className="text-decoration-none d-block d-flex align-items-center justify-content-center">
+          <a
+            href="mailto:x6uhrox@gmail.com"
+            className="text-decoration-none d-block d-flex align-items-center justify-content-center"
+          >
             <LuMail size={20} />
             <span className="ms-2">x6uhrox@gmail.com</span>
           </a>
@@ -20,7 +23,8 @@ const Footer = () => {
             href="https://github.com/DaniilPopov0809/radency-ht-02"
             className="text-decoration-none d-block d-flex align-items-center justify-content-center"
           >
-            <LuGithub size={20} /><span className="ms-2"> GitHub</span>
+            <LuGithub size={20} />
+            <span className="ms-2"> GitHub</span>
           </a>
         </div>
       </Container>
