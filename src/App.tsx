@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="min-h-screen flex flex-col bg-stone-50">
       <Header />
-      <main className="container mx-auto py-3 px-2 text-neutral-900 overflow-y-auto">
+      <main className="container mx-auto py-3 px-2 text-neutral-900">
         <NotesTable stats={false} />
         <NotesTable stats={true} />
       </main>

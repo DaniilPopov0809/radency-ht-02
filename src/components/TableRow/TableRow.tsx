@@ -6,6 +6,7 @@ import { editNote, removeNote } from "../../redux/notes/notesSlice";
 import { truncateString } from "../../helpers/truncateString";
 import { countCategory } from "../../helpers/countCategory";
 import { getDate } from "../../helpers/getDate";
+import { findCategoryIcon } from "../../helpers/findCategoryIcon";
 
 const TableRow = ({
   note,
@@ -35,7 +36,7 @@ const TableRow = ({
     <tr className="border-b">
       {stats ? (
         <>
-          <td className="py-2 px-3">{category}</td>
+          <td className="py-2 px-3 flex"><span className="me-2">{findCategoryIcon(category)}</span>{category}</td>
           <td className="py-2 px-3 text-center">
             {countCategory(notes, category, false)}
           </td>
@@ -45,7 +46,7 @@ const TableRow = ({
         </>
       ) : (
         <>
-          <td className="py-2 px-3">{note.title}</td>
+          <td className="py-2 px-3 flex"><span className="me-2">{findCategoryIcon(note.category)}</span>{note.title}</td>
           <td className="py-2 px-3 text-center">{note.created}</td>
           <td className="py-2 px-3 text-center">{note.category}</td>
           <td className="py-2 px-3 text-center">

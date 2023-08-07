@@ -24,3 +24,8 @@ export type UpdateNoteItem = Partial<NoteItem>;
 export type HandleFunction = (type?: ModalType, note?: NoteItem) => void;
 
 export type ModalType = "add" | "edit";
+
+export type CategoryItem = {
+    category: string;
+    icon: any; 
+}

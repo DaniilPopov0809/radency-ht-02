@@ -54,7 +54,7 @@ const NotesTable = ({ stats }: { stats: boolean }) => {
           {archived ? "Archived notes" : "Active notes"}
         </h1>
       )}
-      <table className="border-solid rounded-t-lg mx-auto overflow-hidden max-w-full mb-4">
+      <table className="border-solid rounded-t-lg mx-auto overflow-hidden max-w-full w-full mb-4">
         <thead className="bg-violet-300 shadow-md">
           <tr className="text-white ">
             {stats ? (
