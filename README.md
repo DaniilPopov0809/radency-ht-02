@@ -16,11 +16,10 @@ The "To-Do" web app is a convenient tool for organizing tasks, ideas, and variou
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![EMOTION](https://img.shields.io/badge/emotion-CC6699?style=for-the-badge&logoColor=white)
+![TAILWINDCSS](https://img.shields.io/badge/tailwindcss-CC6699?style=for-the-badge&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![GIT](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white)
-![React-bootstrap](https://img.shields.io/badge/Reactbootstrap-35FFF8?style=for-the-badge)
 
 ## Link to web app:
 
@@ -29,3 +28,4 @@ The "To-Do" web app is a convenient tool for organizing tasks, ideas, and variou
 ## Test task:
 
 [Test task](https://drive.google.com/file/d/1vjMwHT-Jna276WCR-xR_Xgh-rwKkBEB0/view?usp=drive_link)
+
