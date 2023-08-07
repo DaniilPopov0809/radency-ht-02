@@ -61,7 +61,6 @@ const initialState: NotesState = {
       archive: false,
     },
   ],
-  status: "idle",
   categories: ["Task", "Idea", "Random Thought"],
 };
 

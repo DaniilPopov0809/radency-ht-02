@@ -1,16 +1,15 @@
-import { Container } from "react-bootstrap";
 import NotesTable from "./components/NotesTable/NotesTable";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
-    <div className="min-vh-100 d-flex flex-column">
+    <div className="min-h-screen flex flex-col bg-stone-50">
       <Header />
-      <Container as={"main"} className="px-2 py-3">
+      <main className="container mx-auto py-3 px-2 text-neutral-900 overflow-y-auto">
         <NotesTable stats={false} />
         <NotesTable stats={true} />
-      </Container>
+      </main>
       <Footer />
     </div>
   );

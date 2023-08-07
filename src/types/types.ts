@@ -10,7 +10,6 @@ export interface NoteItem {
 export interface NotesState {
   notes: NoteItem[];
   categories: string[];
-  status: "idle" | "loading" | "failed";
 }
 
 export interface ReceivedNoteItem {

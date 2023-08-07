@@ -32,25 +32,33 @@ const TableRow = ({
   };
 
   return (
-    <tr className="table-light">
+    <tr className="border-b">
       {stats ? (
         <>
-          <td>{category}</td>
-          <td>{countCategory(notes, category, false)}</td>
-          <td>{countCategory(notes, category, true)}</td>
+          <td className="py-2 px-3">{category}</td>
+          <td className="py-2 px-3 text-center">
+            {countCategory(notes, category, false)}
+          </td>
+          <td className="py-2 px-3 text-center">
+            {countCategory(notes, category, true)}
+          </td>
         </>
       ) : (
         <>
-          <td>{note.title}</td>
-          <td>{note.created}</td>
-          <td>{note.category}</td>
-          <td>{truncateString(note.content, 25)}</td>
-          <td>{getDate(note.content).join(", ")}</td>
-          <td>
-            <div className="d-flex justify-content-center">
+          <td className="py-2 px-3">{note.title}</td>
+          <td className="py-2 px-3 text-center">{note.created}</td>
+          <td className="py-2 px-3 text-center">{note.category}</td>
+          <td className="py-2 px-3 text-center">
+            {truncateString(note.content, 25)}
+          </td>
+          <td className="py-2 px-3 text-center">
+            {getDate(note.content).join(", ")}
+          </td>
+          <td className="py-2 px-3">
+            <div className="flex justify-end">
               <button
                 type="button"
-                className="btn btn-primary me-2"
+                className="hover:text-violet-600 focus-visible:outline-none focus-visible:ring focus-visible:ring-violet-400 focus-visible:rounded-lg duration-300 me-2"
                 name="edit"
                 onClick={() => handleShow("edit", note)}
               >
@@ -58,7 +66,7 @@ const TableRow = ({
               </button>
               <button
                 type="button"
-                className="btn btn-primary me-2"
+                className="hover:text-violet-600 focus-visible:outline-none focus-visible:ring focus-visible:ring-violet-400 focus-visible:rounded-lg duration-300 me-2"
                 name="archive"
                 onClick={handleClickArchived}
               >
@@ -66,7 +74,7 @@ const TableRow = ({
               </button>
               <button
                 type="button"
-                className="btn btn-primary"
+                className="hover:text-violet-600 focus-visible:outline-none focus-visible:ring focus-visible:ring-violet-400 focus-visible:rounded-lg duration-300"
                 name="remove"
                 onClick={handleClickRemove}
               >

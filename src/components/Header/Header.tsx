@@ -1,23 +1,19 @@
-import { Navbar, Container } from "react-bootstrap";
 import Logo from "../Logo/Logo";
-import { TextLogo, Link } from "./Header.styled";
 
 const Header = () => {
   return (
-    <header>
-      <Navbar bg="success" expand="lg" variant="light">
-        <Container>
-          <Navbar.Brand>
-            <Link
-              href={"/"}
-              className="text-decoration-none d-flex align-items-center btn btn-link p-0"
-            >
-              <Logo />
-              <TextLogo className="text-light">ToDo</TextLogo>
-            </Link>
-          </Navbar.Brand>
-        </Container>
-      </Navbar>
+    <header className="bg-lime-500 shadow-md">
+      <div className="container py-3 px-2 mx-auto">
+        <nav>
+          <a
+            href={"/"}
+            className="px-3 py-1 underline-none inline-flex items-center hover:scale-105 focus-visible:outline-none focus-visible:ring focus-visible:ring-violet-400 focus-visible:rounded-lg duration-300"
+          >
+            <Logo />
+            <p className="text-white text-2xl ms-1 font-semibold">ToDo</p>
+          </a>
+        </nav>
+      </div>
     </header>
   );
 };

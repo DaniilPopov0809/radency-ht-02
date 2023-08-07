@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { Table, Button } from "react-bootstrap";
+import { BiArchiveIn } from "react-icons/bi";
+import { AiOutlineDelete } from "react-icons/ai";
 import TableRow from "../TableRow/TableRow";
 import TableModal from "../TableModal/TableModal";
 import { useAppSelector } from "../../hooks/hooks";
@@ -49,25 +50,46 @@ const NotesTable = ({ stats }: { stats: boolean }) => {
   return (
     <>
       {!stats && (
-        <h1 className="text-center">{archived ? "Archive" : "ToDo List"}</h1>
+        <h1 className="text-center mb-3 font-medium text-3xl">
+          {archived ? "Archived notes" : "Active notes"}
+        </h1>
       )}
-      <Table striped bordered hover>
-        <thead>
-          <tr className="table-primary">
+      <table className="border-solid rounded-t-lg mx-auto overflow-hidden max-w-full mb-4">
+        <thead className="bg-violet-300 shadow-md">
+          <tr className="text-white ">
             {stats ? (
               <>
-                <th scope="col">Name</th>
-                <th scope="col">Active</th>
-                <th scope="col">Archived</th>
+                <th scope="col" className="py-2 px-3">
+                  Name
+                </th>
+                <th scope="col" className="py-2 px-3">
+                  Active
+                </th>
+                <th scope="col" className="py-2 px-3">
+                  Archived
+                </th>
               </>
             ) : (
               <>
-                <th scope="col">Name</th>
-                <th scope="col">Created</th>
-                <th scope="col">Category</th>
-                <th scope="col">Content</th>
-                <th scope="col">Dates</th>
-                <th scope="col">Functions</th>
+                <th scope="col" className="py-2 px-3">
+                  Name
+                </th>
+                <th scope="col" className="py-2 px-3">
+                  Created
+                </th>
+                <th scope="col" className="py-2 px-3">
+                  Category
+                </th>
+                <th scope="col" className="py-2 px-3">
+                  Content
+                </th>
+                <th scope="col" className="py-2 px-3">
+                  Dates
+                </th>
+                <th scope="col" className="py-2 px-3 flex justify-end">
+                  <BiArchiveIn size={24} className="me-2" />
+                  <AiOutlineDelete size={24} />
+                </th>
               </>
             )}
           </tr>
@@ -97,38 +119,38 @@ const NotesTable = ({ stats }: { stats: boolean }) => {
                   />
                 ))}
         </tbody>
-      </Table>
+      </table>
       {activeNotes.length === 0 && !archived && !stats && (
-        <p className="text-center">No notes available.</p>
+        <p className="text-center border-b mb-4">No notes available.</p>
       )}
       {archivedNotes.length === 0 && archived && !stats && (
-        <p className="text-center">No notes available.</p>
+        <p className="text-center border-b mb-4">No notes available.</p>
       )}
-      <div className="mb-3">
+      <div className="mb-4">
         {!stats && (
-          <Button
-            className="btn primary-btn me-2"
+          <button
+            className="text-white bg-violet-300 shadow-md px-3 py-2 rounded-full me-2 hover:bg-violet-600 focus-visible:outline-none focus-visible:ring focus-visible:ring-violet-600 focus-visible:rounded-full duration-300 me-2 disabled:opacity-50 disabled:cursor-not-allowed"
             onClick={() => handleShow("add")}
             disabled={archived === true}
           >
             Create Note
-          </Button>
+          </button>
         )}
         {!stats && (
-          <Button
-            className="btn primary-btn me-2"
+          <button
+            className="text-white bg-violet-300 shadow-md px-3 py-2 rounded-full me-2 hover:bg-violet-600 focus-visible:outline-none focus-visible:ring focus-visible:ring-violet-600 focus-visible:rounded-full duration-300 me-2"
             onClick={() => setArchived(true)}
           >
             Archived Notes
-          </Button>
+          </button>
         )}
         {!stats && (
-          <Button
-            className="btn primary-btn"
+          <button
+            className="text-white bg-violet-300 shadow-md px-3 py-2 rounded-full me-2 hover:bg-violet-600 focus-visible:outline-none focus-visible:ring focus-visible:ring-violet-600 focus-visible:rounded-full duration-300"
             onClick={() => setArchived(false)}
           >
             Active Notes
-          </Button>
+          </button>
         )}
       </div>
       <TableModal

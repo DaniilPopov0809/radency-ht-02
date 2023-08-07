@@ -10,7 +10,6 @@ const Logo = () => {
       version="1.1"
       width="40px"
       xmlnsXlink="http://www.w3.org/1999/xlink"
-      style={{ width: "100%", height: "100%" }}
     >
       <g
         className="ldl-scale"
