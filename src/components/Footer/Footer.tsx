@@ -18,7 +18,7 @@ const Footer = () => {
         </div>
         <div className="m-0">
           <a
-            href="https://github.com/DaniilPopov0809/radency-ht-02"
+            href="https://github.com/DaniilPopov0809/radency-ht-02/tree/feature/refactoring-by-tailwindcss"
             className="px-3 py-1 no-underline inline-flex items-center justify-center hover:text-violet-600 focus-visible:outline-none focus-visible:ring focus-visible:ring-violet-400 focus-visible:rounded-lg duration-300"
           >
             <LuGithub size={20} />

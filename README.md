@@ -23,7 +23,7 @@ The "To-Do" web app is a convenient tool for organizing tasks, ideas, and variou
 
 ## Link to web app:
 
-[Link to web app](https://radency-ht-02-git-main-daniilpopov0809.vercel.app/)
+[Link to web app](https://radency-ht-02-git-feature-refactoring-by-f4106c-daniilpopov0809.vercel.app/)
 
 ## Test task:
 
