@@ -1,4 +1,4 @@
-import { HandleFunction, ModalType, NoteItem } from "../../types/types";
+import { HandleFunction, ModalTypes, NoteItem } from "../../types/types";
 import NotesForm from "../NotesForm/NotesForm";
 import { AiOutlineClose } from "react-icons/ai";
 
@@ -10,7 +10,7 @@ const TableModal = ({
 }: {
   show: boolean;
   handleClose: HandleFunction;
-  modalType: ModalType;
+  modalType: ModalTypes;
   initialNote: NoteItem | null;
 }) => {
   const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {

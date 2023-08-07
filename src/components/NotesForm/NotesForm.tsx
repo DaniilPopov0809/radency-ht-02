@@ -3,7 +3,7 @@ import { nanoid } from "nanoid";
 import { useAppSelector, useAppDispatch } from "../../hooks/hooks";
 import { selectCategoties } from "../../redux/notes/notesSelectors";
 import { addNote, editNote } from "../../redux/notes/notesSlice";
-import { ModalType, NoteItem, HandleFunction } from "../../types/types";
+import { ModalTypes, NoteItem, HandleFunction } from "../../types/types";
 import { getCurrentDate } from "../../helpers/getCurrentDate";
 
 const NotesForm = ({
@@ -12,7 +12,7 @@ const NotesForm = ({
   handleClose,
   isModalOpen,
 }: {
-  modalType: ModalType;
+  modalType: ModalTypes;
   initialNote: NoteItem | null;
   handleClose: HandleFunction;
   isModalOpen: boolean;
@@ -25,7 +25,7 @@ const NotesForm = ({
   const [content, setContent] = useState("");
 
   useEffect(() => {
-    if (modalType === "edit" && initialNote) {
+    if (modalType === ModalTypes.Edit && initialNote) {
       setTitle(initialNote.title);
       setCategory(initialNote.category);
       setContent(initialNote.content);
@@ -89,6 +89,7 @@ const NotesForm = ({
           className="px-3 py-2 border rounded-lg hover:border-violet-600 focus-visible:outline-none focus-visible:ring focus-visible:ring-violet-400 focus-visible:rounded-lg duration-300"
           placeholder="Enter title"
           value={title}
+          required
           onChange={handleTitleChange}
         />
       </div>
@@ -98,6 +99,7 @@ const NotesForm = ({
         </label>
         <select
           name="category"
+          required
           className="px-3 py-2 border rounded-lg hover:border-violet-600 focus-visible:outline-none focus-visible:ring focus-visible:ring-violet-400 focus-visible:rounded-lg duration-300"
           value={category}
           onChange={(e) => setCategory(e.target.value)}
@@ -126,7 +128,6 @@ const NotesForm = ({
       <button
         type="submit"
         className="text-white bg-violet-300 shadow-md px-3 py-2 rounded-full me-2 hover:bg-violet-600 focus-visible:outline-none focus-visible:ring focus-visible:ring-violet-600 focus-visible:rounded-full duration-300"
-        disabled={!title || !category}
       >
         {modalType === "add" ? "Add note" : "Save note"}
       </button>

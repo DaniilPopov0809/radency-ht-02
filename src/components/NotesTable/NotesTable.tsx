@@ -8,11 +8,11 @@ import {
   selectNotes,
   selectCategoties,
 } from "../../redux/notes/notesSelectors";
-import { NoteItem, HandleFunction, ModalType } from "../../types/types";
+import { NoteItem, HandleFunction, ModalTypes } from "../../types/types";
 
 const NotesTable = ({ stats }: { stats: boolean }) => {
   const [show, setShow] = useState(false);
-  const [modalType, setModalType] = useState<ModalType>("add");
+  const [modalType, setModalType] = useState<ModalTypes>(ModalTypes.Add);
   const [selectedNote, setSelectedNote] = useState<NoteItem | null>(null);
   const [archived, setArchived] = useState<boolean>(false);
 
@@ -130,7 +130,7 @@ const NotesTable = ({ stats }: { stats: boolean }) => {
         {!stats && (
           <button
             className="text-white bg-violet-300 shadow-md px-3 py-2 rounded-full me-2 hover:bg-violet-600 focus-visible:outline-none focus-visible:ring focus-visible:ring-violet-600 focus-visible:rounded-full duration-300 me-2 disabled:opacity-50 disabled:cursor-not-allowed"
-            onClick={() => handleShow("add")}
+            onClick={() => handleShow(ModalTypes.Add)}
             disabled={archived === true}
           >
             Create Note

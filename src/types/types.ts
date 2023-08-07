@@ -21,9 +21,12 @@ export interface ReceivedNoteItem {
 
 export type UpdateNoteItem = Partial<NoteItem>;
 
-export type HandleFunction = (type?: ModalType, note?: NoteItem) => void;
+export type HandleFunction = (type?: ModalTypes, note?: NoteItem) => void;
 
-export type ModalType = "add" | "edit";
+export enum ModalTypes {
+  Add = "add",
+  Edit = "edit",
+};
 
 export type CategoryItem = {
     category: string;

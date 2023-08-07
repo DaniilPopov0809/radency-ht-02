@@ -1,4 +1,4 @@
-import { NoteItem, HandleFunction } from "../../types/types";
+import { NoteItem, HandleFunction, ModalTypes } from "../../types/types";
 import { BiArchiveIn, BiEditAlt } from "react-icons/bi";
 import { AiOutlineDelete } from "react-icons/ai";
 import { useAppDispatch } from "../../hooks/hooks";
@@ -61,7 +61,7 @@ const TableRow = ({
                 type="button"
                 className="hover:text-violet-600 focus-visible:outline-none focus-visible:ring focus-visible:ring-violet-400 focus-visible:rounded-lg duration-300 me-2"
                 name="edit"
-                onClick={() => handleShow("edit", note)}
+                onClick={() => handleShow(ModalTypes.Edit, note)}
               >
                 <BiEditAlt size={24} />
               </button>
